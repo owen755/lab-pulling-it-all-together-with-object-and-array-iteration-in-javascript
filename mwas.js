@@ -114,7 +114,6 @@ function gameObject() {
         },
     };
 }
-// Return a player's total points.
 function numPointsScored(playerName) {
     const teams = gameObject();
 
@@ -125,10 +124,8 @@ function numPointsScored(playerName) {
     }
 
     return null;
-    console.log(numPointsScored("Jeff Adrien"));
 }
 
-// Return a player's shoe size.
 function shoeSize(playerName) {
     const teams = gameObject();
 
@@ -141,7 +138,6 @@ function shoeSize(playerName) {
     return null;
 }
 
-// Return the colors for a specific team.
 function teamColors(teamName) {
     const teams = gameObject();
 
@@ -154,14 +150,12 @@ function teamColors(teamName) {
     return null;
 }
 
-// Return both team names in one array.
 function teamNames() {
     const teams = gameObject();
 
     return Object.values(teams).map((team) => team.teamName);
 }
 
-// Return all jersey numbers for a given team.
 function playerNumbers(teamName) {
     const teams = gameObject();
 
@@ -174,7 +168,6 @@ function playerNumbers(teamName) {
     return [];
 }
 
-// Return all stats for one player.
 function playerStats(playerName) {
     const teams = gameObject();
 
@@ -187,7 +180,6 @@ function playerStats(playerName) {
     return null;
 }
 
-// Find the player with the biggest shoe and return their rebounds.
 function bigShoeRebounds() {
     const teams = gameObject();
     let largestShoe = 0;
@@ -205,9 +197,14 @@ function bigShoeRebounds() {
     return rebounds;
 }
 
-// Find the player with the most points.
-function mostPointsScored() {  const teams = gameObject(); let highestScorer = null; let highestPoints = -Infinity;
-  for (const teamData of Object.values(teams)) {  for (const [playerName, playerStats] of Object.entries(teamData.players)) {  if (playerStats.points > highestPoints) {
+function mostPointsScored() {
+    const teams = gameObject();
+    let highestScorer = null;
+    let highestPoints = -Infinity;
+
+    for (const teamData of Object.values(teams)) {
+        for (const [playerName, playerStats] of Object.entries(teamData.players)) {
+            if (playerStats.points > highestPoints) {
                 highestPoints = playerStats.points;
                 highestScorer = playerName;
             }
@@ -217,7 +214,6 @@ function mostPointsScored() {  const teams = gameObject(); let highestScorer = n
     return highestScorer;
 }
 
-// Find the team with the highest total points.
 function winningTeam() {
     const teams = gameObject();
     let winningTeamName = null;
@@ -235,7 +231,6 @@ function winningTeam() {
     return winningTeamName;
 }
 
-// Find the player whose name is longest.
 function playerWithLongestName() {
     const teams = gameObject();
     let longestNamePlayer = null;
@@ -253,7 +248,6 @@ function playerWithLongestName() {
     return longestNamePlayer;
 }
 
-// Check if the longest-named player also has the most steals.
 function doesLongNameStealATon() {
     const teams = gameObject();
     const longestNamePlayer = playerWithLongestName();

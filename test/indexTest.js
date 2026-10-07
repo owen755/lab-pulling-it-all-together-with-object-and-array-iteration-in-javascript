@@ -65,4 +65,22 @@ describe('Basketball Stats', function () {
       expect(bigShoeRebounds()).to.equal(12);
     });
   });
+
+  describe('bonus challenges', function () {
+    it('should return the player with the most points', function () {
+      expect(mostPointsScored()).to.equal('Ben Gordon');
+    });
+
+    it('should return the team with the most total points', function () {
+      expect(winningTeam()).to.equal('Brooklyn Nets');
+    });
+
+    it('should return the player with the longest name', function () {
+      expect(playerWithLongestName()).to.equal('Bismack Biyombo');
+    });
+
+    it('should return whether the longest-name player has the most steals', function () {
+      expect(doesLongNameStealATon()).to.equal(false);
+    });
+  });
 });
